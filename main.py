@@ -5,37 +5,14 @@ ai = p2.Parsoon(ai_engine="gemini",lang="en")
 # enter api of Gemini if dont have get it for free from https://aistudio.google.com/app/apikey
 api_gemini = "api here"
 
-
-
 keywords = {
-        "who made you": "aryan made me"
-    
-      
-        
+        "who are you": "i am gemini"
     }
 # you enter the keywords if you want 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if api_gemini != "" or '' or "api here":
     with open("gemni_","w") as f :
         f.write(api_gemini)
-def clear_terminal():
-    if platform.system() == 'Windows':
-        os.system('cls')
-    else:
-        os.system('clear')
+os.systen("clear")
 
 # Check if API exists in the file
 
@@ -77,21 +54,12 @@ while True:
     except Exception as e:
         print("Error listening:", e)
         continue
-
-    
     response = keywords.get(command)
-    
     if response is None or "" or '':
         try:
-           
-                
-            response = ai.ai_response(query=f"{command}", token=gg)
-       
-            if command == response :
-                speak("i am confused")
-            else :  
-                print("AI Response:", response)
-                speak(response)
+            response = ai.ai_response(query=f"{command}", token=gg)            
+        print("AI Response:", response)
+        speak(response)
         except Exception as e:
             print("Error processing AI response:", e)
     else:
