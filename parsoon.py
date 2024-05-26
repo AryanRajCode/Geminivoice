@@ -10,7 +10,7 @@ import requests
 import datetime
 import pytz
 import google.generativeai as genai
-import ollm
+
 
 class Parsoon:
     def __init__(self, api_key="", countrycode="IN", sound_file="output.mp3", savefile=False, ai_engine="gemini", speech_engine="gTTS", gui=False, play_sound_enabled=True, enable_openweb=True, lang="en"):
@@ -103,7 +103,8 @@ class Parsoon:
             model = genai.GenerativeModel('gemini-1.0-pro-latest')
             response = model.generate_content(query)
             return(response.text)
-        elif self.ai_engine == "ollama":
+        elif self.ai_engine == "ollama":    
+            import ollm
             return ollm.olama(query, model)
         else:
             print("Invalid AI engine. Please select 'test'.")
