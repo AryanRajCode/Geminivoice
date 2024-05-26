@@ -12,7 +12,7 @@ keywords = {
 if api_gemini != "" or '' or "api here":
     with open("gemni_","w") as f :
         f.write(api_gemini)
-os.systen("clear")
+os.system("clear")
 
 # Check if API exists in the file
 
