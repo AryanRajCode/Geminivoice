@@ -32,7 +32,7 @@ except FileNotFoundError:
         file.write(api_gemini)
 
 # Clear the terminal
-clear_terminal()
+
 
 # Initialize Parsoon AI engine
 ai = p2.Parsoon(ai_engine="gemini")
@@ -58,8 +58,8 @@ while True:
     if response is None or "" or '':
         try:
             response = ai.ai_response(query=f"{command}", token=gg)            
-        print("AI Response:", response)
-        speak(response)
+            print("AI Response:", response)
+            speak(response)
         except Exception as e:
             print("Error processing AI response:", e)
     else:
