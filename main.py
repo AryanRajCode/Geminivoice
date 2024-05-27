@@ -1,6 +1,6 @@
 import os
 import platform
-import parsoon as p2
+import SimpleVoiceAssistant as p2
 ai = p2.Parsoon(ai_engine="gemini",lang="en")
 # enter api of Gemini if dont have get it for free from https://aistudio.google.com/app/apikey
 api_gemini = "api here"
@@ -8,13 +8,13 @@ api_gemini = "api here"
 keywords = {
         "who are you": "i am gemini"
     }
-# you enter the keywords if you want 
+# you can enter the keywords if you want 
 if api_gemini != "" or '' or "api here":
     with open("gemni_","w") as f :
         f.write(api_gemini)
 os.system("clear")
 
-# Check if API exists in the file
+# Check API exists in txt or not
 
 try:
     with open("gemni_api.txt", 'r') as file:
@@ -31,10 +31,9 @@ except FileNotFoundError:
     with open("gemni_api.txt", 'w') as file:
         file.write(api_gemini)
 
-# Clear the terminal
 
 
-# Initialize Parsoon AI engine
+
 ai = p2.Parsoon(ai_engine="gemini")
 
 
